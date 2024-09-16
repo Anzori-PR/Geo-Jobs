@@ -1,0 +1,73 @@
+<div class="flex flex-col min-h-screen ml-72" style="background-color: #EDF4F2;">
+    <div class="w-full max-w-4xl mx-auto py-8 px-4">
+        <!-- FAQ Header -->
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Frequently Asked Questions</h2>
+
+        <!-- FAQ Items -->
+        <div class="space-y-4">
+            <!-- FAQ 1 -->
+            <div class="border-b border-gray-200 pb-4">
+                <button (click)="visible('faq1')"
+                    class="flex justify-between items-center w-full py-3 text-left text-lg font-medium text-gray-700 focus:outline-none focus:ring focus:ring-sky-500 transition">
+                    <span>How do I apply for a job?</span>
+                    <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div id="faq1" class="mt-2 text-sm text-gray-600">
+                    <p>You can apply for a job by clicking on the job listing and submitting your application through
+                        our online form.</p>
+                </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="border-b border-gray-200 pb-4">
+                <button (click)="visible('faq2')"
+                    class="flex justify-between items-center w-full py-3 text-left text-lg font-medium text-gray-700 focus:outline-none focus:ring focus:ring-sky-500 transition">
+                    <span>What is the status of my application?</span>
+                    <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div id="faq2" class="mt-2 text-sm text-gray-600 hidden">
+                    <p>You can check the status of your application by logging into your account and viewing your
+                        submitted applications.</p>
+                </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="border-b border-gray-200 pb-4">
+                <button (click)="visible('faq3')"
+                    class="flex justify-between items-center w-full py-3 text-left text-lg font-medium text-gray-700 focus:outline-none focus:ring focus:ring-sky-500 transition">
+                    <span>Can I apply for multiple jobs?</span>
+                    <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div id="faq3" class="mt-2 text-sm text-gray-600 hidden">
+                    <p>Yes, you can apply for multiple jobs at the same time. Each job application will be treated
+                        independently.</p>
+                </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="border-b border-gray-200 pb-4">
+                <button (click)="visible('faq4')"
+                    class="flex justify-between items-center w-full py-3 text-left text-lg font-medium text-gray-700 focus:outline-none focus:ring focus:ring-sky-500 transition">
+                    <span>How do I reset my password?</span>
+                    <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div id="faq4" class="mt-2 text-sm text-gray-600 hidden">
+                    <p>If you’ve forgotten your password, you can reset it by clicking the “Forgot Password” link on the
+                        login page.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+.login-transition {
+    /* Initial position off-screen */
+    position: fixed;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: top 0.5s ease, transform 0.5s ease;
+    z-index: 50;
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login-transition.show {
+    /* Final position at the center */
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
