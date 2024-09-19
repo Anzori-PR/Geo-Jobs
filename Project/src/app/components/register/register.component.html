@@ -1,3 +1,36 @@
-<div class="fixed inset-0 items-center justify-center z-50 p-6 bg-white shadow-lg rounded-lg max-w-md max-h-64 mx-auto my-auto">
-    <span class="text-2xl font-bold text-black absolute right-2 top-0.5 cursor-pointer" (click)="close()">X</span>
+<div class="fixed inset-0 items-center justify-center z-50 bg-white shadow-lg rounded-lg max-w-md h-fit py-7 mx-auto my-auto">
+    <span class="absolute right-3 top-3 cursor-pointer" (click)="close()">
+        <svg data-slot="icon" aria-hidden="true" fill="none" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="size-6 text-black font-bold">
+            <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+    </span>
+    <div class="flex items-center justify-center h-max">
+        <div class="bg-white rounded-lg max-w-sm w-full">
+            <h2 class="text-center mb-4 text-4xl font-extrabold text-gray-900">Sign Up</h2>
+            <form>
+                <div class="mb-4">
+                    <label for="fullName" class="block text-gray-700 text-sm font-semibold mb-2">Full Name *</label>
+                    <input type="text" id="fullName" class="form-input w-full px-4 py-2 border rounded-lg text-gray-700 focus:ring-blue-500" required placeholder="James Brown">
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700 text-sm font-semibold mb-2">Email Address *</label>
+                    <input type="email" id="email" class="form-input w-full px-4 py-2 border rounded-lg text-gray-700 focus:ring-blue-500" required placeholder="hello@alignui.com">
+                </div>
+                <div class="mb-6">
+                    <label for="password" class="block text-gray-700 text-sm font-semibold mb-2">Password *</label>
+                    <input type="password" id="password" class="form-input w-full px-4 py-2 border rounded-lg text-gray-700 focus:ring-blue-500" required placeholder="••••••••">
+                </div>
+                <div class="mb-2">
+                    <label for="Cpassword" class="block text-gray-700 text-sm font-semibold mb-2">Confirm Password *</label>
+                    <input type="password" id="Cpassword" class="form-input w-full px-4 py-2 border rounded-lg text-gray-700 focus:ring-blue-500" required placeholder="••••••••">
+                </div>
+                <div class="error text-red-800 text-sm"></div>
+                <button type="submit" class="w-full bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Register</button>
+                <p class="text-gray-600 text-xs text-center mt-4">
+                    By clicking Register, you agree to accept Apex Financial's
+                    <a href="#" class="text-blue-500 hover:underline">Terms and Conditions</a>.
+                </p>
+            </form>
+        </div>
+    </div>
 </div>

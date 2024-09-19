@@ -14,4 +14,5 @@ export class LoginComponent {
   close() {
     this.closePopup.emit();
   }
+
 }
