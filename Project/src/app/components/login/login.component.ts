@@ -8,6 +8,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class LoginComponent {
 
   @Output() closePopup = new EventEmitter<void>();
+  @Output() goRegisterPopup = new EventEmitter<void>();
 
   constructor() {}
 
@@ -15,4 +16,8 @@ export class LoginComponent {
     this.closePopup.emit();
   }
 
+  goRegister() {
+    console.log("qnaa")
+    this.goRegisterPopup.emit();
+  }
 }

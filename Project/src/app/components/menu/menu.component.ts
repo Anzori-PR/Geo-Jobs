@@ -22,10 +22,12 @@ export class MenuComponent implements OnInit {
 
   login() {
     this.visible = true;
+    this.visibleR = false;
   }
 
   register() {
     this.visibleR = true;
+    this.visible = false;
   }
 
   closePopup() {
@@ -33,4 +35,8 @@ export class MenuComponent implements OnInit {
     this.visibleR = false;
   }
 
+  goRegisterPopup() {
+    this.visible = false;
+    this.visibleR = true; 
+  }
 }

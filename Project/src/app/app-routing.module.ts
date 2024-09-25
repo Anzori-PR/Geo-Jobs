@@ -4,6 +4,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CompaniesComponent } from './components/companies/companies.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FAQComponent } from './components/faq/faq.component';
+import { JobDetailComponent } from './components/job-detail/job-detail.component';
 
 const routes: Routes = [
   {path: '', redirectTo : 'Dashboard', pathMatch : 'full'},
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path: 'Companies', component : CompaniesComponent},
   {path: 'Contact', component : ContactComponent},
   {path: 'FAQ', component : FAQComponent},
+  {path: 'Job-detail', component : JobDetailComponent}
 ];
 
 @NgModule({
