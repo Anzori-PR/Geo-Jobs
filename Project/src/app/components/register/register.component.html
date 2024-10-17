@@ -7,6 +7,14 @@
     <div class="flex items-center justify-center h-max">
         <div class="bg-white rounded-lg max-w-sm w-full">
             <h2 class="text-center mb-4 text-4xl font-extrabold text-gray-900">Sign Up</h2>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-semibold mb-2">Upload Profile Image</label>
+                <div class="relative">
+                  <label for="profileImageUpload" class="form-input text-sm content-center w-24 h-24 rounded-full flex justify-center m-auto border text-gray-700 focus:ring-blue-500 bgima bg-cover" style="background-image: url(../../../assets/images/default.webp); cursor: pointer;">
+                  </label>
+                  <input type="file" id="profileImageUpload" accept="image/*" class="hidden" />
+                </div>
+            </div>
             <form>
                 <div class="mb-4">
                     <label for="fullName" class="block text-gray-700 text-sm font-semibold mb-2">Full Name *</label>

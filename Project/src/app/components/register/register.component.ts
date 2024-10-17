@@ -14,4 +14,5 @@ export class RegisterComponent {
   close() {
     this.closePopup.emit();
   }
+
 }
