@@ -2,6 +2,7 @@ import { Component, NgModule, OnInit, ViewChild } from '@angular/core';
 import { NgModel } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginComponent } from '../login/login.component';
+import { RegisterComponent } from '../register/register.component';
 
 @Component({
   selector: 'app-menu',
@@ -9,15 +10,24 @@ import { LoginComponent } from '../login/login.component';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-  @ViewChild(LoginComponent) loginComponent!: LoginComponent;
+  @ViewChild(RegisterComponent) RegisterComponent!: RegisterComponent;
 
   visible: boolean = false;
   visibleR: boolean = false;
 
+  auth: boolean = true;
+
   constructor() { }
 
   ngOnInit(): void {
-
+    const user = JSON.parse(localStorage.getItem('userData') || '{}');
+    const token = localStorage.getItem('authToken');
+  
+    if (user && token) {
+      this.auth = false;
+    } else {
+      this.auth = true;
+    }
   }
 
   login() {
@@ -30,6 +40,11 @@ export class MenuComponent implements OnInit {
     this.visible = false;
   }
 
+  logOut() {
+    localStorage.removeItem("authToken");
+    window.location.reload();
+  }
+
   closePopup() {
     this.visible = false;
     this.visibleR = false;
@@ -39,4 +54,5 @@ export class MenuComponent implements OnInit {
     this.visible = false;
     this.visibleR = true; 
   }
+
 }

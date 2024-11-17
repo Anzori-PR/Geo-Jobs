@@ -1,0 +1,79 @@
+<div class="flex flex-col min-h-screen ml-72 justify-center items-center" style="background-color: #EDF4F2;">
+    <div class="bg-white shadow-lg rounded-lg w-full max-w-5xl p-8 mt-5">
+      <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Edit Profile</h2>
+      <form id="editProfileForm" class="space-y-6" (submit)="onSubmit()">
+  
+        <!-- Name and Surname Fields -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label for="firstName" class="block text-sm font-medium text-gray-700">Company Name <span class="text-red-500">*</span></label>
+            <input type="text" [(ngModel)]="data.companyInfo.companyName" id="firstName" name="firstName" class="mt-1 block w-full px-4 py-3 text-lg border-2 border-gray-300 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Enter your full name">
+          </div>
+          <div>
+            <label for="companyCategory" class="block text-sm font-medium text-gray-700">Category of Company</label>
+            <select id="companyCategory" [(ngModel)]="data.companyInfo.companyCategory" name="companyCategory" class="mt-1 block w-full px-4 py-3 text-lg border-2 border-gray-300 focus:ring-indigo-500 focus:border-indigo-500">
+              <option value="">Select a category</option>
+              <option value="IT">IT</option>
+              <option value="Marketing">Marketing</option>
+              <option value="Finance">Finance</option>
+              <option value="Healthcare">Healthcare</option>
+              <option value="Education">Education</option>
+              <option value="Retail">Retail</option>
+              <option value="Real Estate">Real Estate</option>
+              <option value="Others">Others</option>
+            </select>
+          </div>
+        </div>
+  
+        <!-- Profile Info Section -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+            <input type="email" id="email" [(ngModel)]="data.companyInfo.email" name="email" class="mt-1 block w-full px-4 py-3 text-lg border-2 border-gray-300 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Enter your email">
+          </div>
+          <div>
+            <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+            <input type="tel" id="phone" [(ngModel)]="data.companyInfo.phone" name="phone" class="mt-1 block w-full px-4 py-3 text-lg border-2 border-gray-300 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Enter your phone number">
+          </div>
+        </div>
+  
+        <!-- Description Field -->
+        <div>
+          <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
+          <textarea id="description" [(ngModel)]="data.companyInfo.description" name="description" class="mt-1 block w-full px-4 py-3 text-lg border-2 border-gray-300 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Enter a brief description about your company"></textarea>
+        </div>
+  
+        <!-- Address Field -->
+        <div>
+          <label for="address" class="block text-sm font-medium text-gray-700">Address</label>
+          <input type="text" id="address" [(ngModel)]="data.companyInfo.address" name="address" class="mt-1 block w-full px-4 py-3 text-lg border-2 border-gray-300 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Enter your company address">
+        </div>
+  
+        <!-- Links Section (Website, Social Media) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label for="website" class="block text-sm font-medium text-gray-700">Website</label>
+            <input type="url" id="website" [(ngModel)]="data.companyInfo.website" name="website" class="mt-1 block w-full px-4 py-3 text-lg border-2 border-gray-300 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Enter your website URL">
+          </div>
+          <div>
+            <label for="socialMedia" class="block text-sm font-medium text-gray-700">Social Media Link</label>
+            <input type="url" id="socialMedia" [(ngModel)]="data.companyInfo.socialMedia" name="socialMedia" class="mt-1 block w-full px-4 py-3 text-lg border-2 border-gray-300 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Enter your social media URL">
+          </div>
+        </div>
+  
+        <!-- Logo Image Section -->
+        <div class="flex justify-between items-center">
+          <label for="fileName" class="block text-sm font-medium text-gray-700">Company Logo</label>
+          <input type="file" id="fileName" [(ngModel)]="data.companyInfo._filename" name="fileName" class="mt-1 block w-full px-4 py-3 text-lg border-2 border-gray-300 focus:ring-indigo-500 focus:border-indigo-500"/>
+        </div>
+  
+        <!-- Save Changes Button -->
+        <div class="flex justify-center mt-8">
+          <button type="submit" class="px-6 py-3 text-white bg-indigo-600 hover:bg-indigo-700 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 shadow-lg">
+            Save Changes
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

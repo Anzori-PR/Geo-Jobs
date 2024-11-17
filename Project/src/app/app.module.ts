@@ -12,6 +12,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { JobDetailComponent } from './components/job-detail/job-detail.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { CompanyInfoComponent } from './components/company-info/company-info.component';
 
 @NgModule({
   declarations: [
@@ -24,11 +27,14 @@ import { JobDetailComponent } from './components/job-detail/job-detail.component
     HeaderComponent,
     LoginComponent,
     RegisterComponent,
-    JobDetailComponent
+    JobDetailComponent,
+    CompanyInfoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

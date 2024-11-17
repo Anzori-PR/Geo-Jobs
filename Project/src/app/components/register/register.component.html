@@ -5,7 +5,7 @@
         </svg>
     </span>
     <div class="flex items-center justify-center h-max">
-        <div class="bg-white rounded-lg max-w-sm w-full">
+        <div class="bg-white rounded-lg max-w-sm w-full" (submit)="onSubmit()">
             <h2 class="text-center mb-4 text-4xl font-extrabold text-gray-900">Sign Up</h2>
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-semibold mb-2">Upload Profile Image</label>
@@ -18,21 +18,31 @@
             <form>
                 <div class="mb-4">
                     <label for="fullName" class="block text-gray-700 text-sm font-semibold mb-2">Full Name *</label>
-                    <input type="text" id="fullName" class="form-input w-full px-4 py-2 border rounded-lg text-gray-700 focus:ring-blue-500" required placeholder="James Brown">
+                    <input  type="text" [(ngModel)]="userData.name" name="name" id="fullName" class="form-input w-full px-4 py-2 border rounded-lg text-gray-700 focus:ring-blue-500" required placeholder="James Brown">
                 </div>
                 <div class="mb-4">
                     <label for="email" class="block text-gray-700 text-sm font-semibold mb-2">Email Address *</label>
-                    <input type="email" id="email" class="form-input w-full px-4 py-2 border rounded-lg text-gray-700 focus:ring-blue-500" required placeholder="hello@alignui.com">
+                    <input type="email" [(ngModel)]="userData.email" name="email" id="email" class="form-input w-full px-4 py-2 border rounded-lg text-gray-700 focus:ring-blue-500" required placeholder="hello@alignui.com">
                 </div>
                 <div class="mb-6">
                     <label for="password" class="block text-gray-700 text-sm font-semibold mb-2">Password *</label>
-                    <input type="password" id="password" class="form-input w-full px-4 py-2 border rounded-lg text-gray-700 focus:ring-blue-500" required placeholder="••••••••">
+                    <input type="password" [(ngModel)]="userData.password" name="password" id="password" class="form-input w-full px-4 py-2 border rounded-lg text-gray-700 focus:ring-blue-500" required placeholder="••••••••">
                 </div>
                 <div class="mb-2">
                     <label for="Cpassword" class="block text-gray-700 text-sm font-semibold mb-2">Confirm Password *</label>
-                    <input type="password" id="Cpassword" class="form-input w-full px-4 py-2 border rounded-lg text-gray-700 focus:ring-blue-500" required placeholder="••••••••">
+                    <input type="password" [(ngModel)]="userData.password" name="password" id="Cpassword" class="form-input w-full px-4 py-2 border rounded-lg text-gray-700 focus:ring-blue-500" required placeholder="••••••••">
                 </div>
-                <div class="error text-red-800 text-sm"></div>
+
+                <div class="mb-2 flex justify-start bg-white text-black">
+                    <label for="role">Role:</label>
+                    <select class="ml-5 text-black" id="role" [(ngModel)]="userData.role" name="role" required>
+                        <option value="user">User</option>
+                        <option value="company">Company</option>
+                    </select>
+                </div>
+              
+                
+                <div class="error text-red-800 text-sm">{{ text }}</div>
                 <button type="submit" class="w-full bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Register</button>
                 <p class="text-gray-600 text-xs text-center mt-4">
                     By clicking Register, you agree to accept Apex Financial's

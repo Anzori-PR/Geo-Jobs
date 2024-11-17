@@ -10,9 +10,16 @@ export class HeaderComponent implements OnInit {
 
   currentUrl: string | null = null;
   destination!: string;
-
+  newUser!: any;
+  active: boolean = false;
+  text!: string;
+  notifi: boolean = false;
 
   constructor(private router: Router) { }
+
+  userData = localStorage.getItem('userData') || '{}';
+  user = JSON.parse(this.userData);
+  token = localStorage.getItem('authToken');
 
   ngOnInit(): void {
     // get the current URL and respond to changes
@@ -33,5 +40,31 @@ export class HeaderComponent implements OnInit {
         }
       }
     });
+
+    
+  
+    if (this.user && this.token) {
+      this.newUser = this.user;
+    } else {
+      this.newUser = '';
+    }
+
   }
+
+  openAddVacacncy() {
+    if(this.user.role === "company") {
+      this.active = true;
+    }else {
+      this.notifi = true;
+      setTimeout(() => {
+      this.notifi = false;
+      }, 2000);
+      this.text = "Register as a Company";
+    }
+  }
+
+  closeAddVacancy() {
+    this.active = false;
+  }
+  
 }
