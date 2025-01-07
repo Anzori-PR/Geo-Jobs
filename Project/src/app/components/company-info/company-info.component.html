@@ -66,6 +66,10 @@
           <label for="fileName" class="block text-sm font-medium text-gray-700">Company Logo</label>
           <input type="file" id="fileName" [(ngModel)]="data.companyInfo._filename" name="fileName" class="mt-1 block w-full px-4 py-3 text-lg border-2 border-gray-300 focus:ring-indigo-500 focus:border-indigo-500"/>
         </div>
+
+        <div class="flex text-center">
+          <p class="text-green-800 text-base">{{ text }}</p>
+        </div>
   
         <!-- Save Changes Button -->
         <div class="flex justify-center mt-8">

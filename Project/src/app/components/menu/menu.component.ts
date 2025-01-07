@@ -42,6 +42,7 @@ export class MenuComponent implements OnInit {
 
   logOut() {
     localStorage.removeItem("authToken");
+    localStorage.removeItem("userData");
     window.location.reload();
   }
 

@@ -32,22 +32,36 @@ export class DataService {
   }
 
   //Post vacany
-  updateCompany(data: { 
-    userId: string; 
-    companyInfo: { 
-      companyName: string; 
-      companyCategory: string; 
-      email: string; 
-      phone: string; 
-      description: string; 
-      address: string; 
-      website: string; 
-      socialMedia: string; 
-      _filename: string; 
-    }; 
+  updateCompany(data: {
+    userId: string,
+    companyInfo: {
+      companyName: string;
+      companyCategory: string;
+      email: string;
+      phone: string;
+      description: string;
+      address: string;
+      website: string;
+      socialMedia: string;
+      _filename: string;
+    };
   }): Observable<any> {
     return this.HttpClient.put<any>(`${this.api}/auth/UpdateCompany`, data);
   }
 
+  addVacancy(vacancy: {
+    companyId: string,
+    category: string,
+    name: string,
+    logo: string,
+    description: string,
+    location: string,
+    salary: string,
+    company: string,
+    closingDate: Date,
+    employmentType: string,
+  }) {
+    return this.HttpClient.post<any>(`${this.api}/vacancy/add`, vacancy);
+  }
 }
 

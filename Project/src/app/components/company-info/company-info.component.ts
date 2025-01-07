@@ -8,20 +8,22 @@ import { DataService } from 'src/app/service/data.service';
 })
 export class CompanyInfoComponent {
 
+  text: string = '';
+
   userData = JSON.parse(localStorage.getItem('userData') || '{}');
 
   data = {
     userId: this.userData.id,
     companyInfo: {
-      companyName: '',
-      companyCategory: '',
-      email: '',
-      phone: '',
-      description: '',
-      address: '',
-      website: '',
-      socialMedia: '',
-      _filename: ''
+      companyName: this.userData.companyInfo.companyName,
+      companyCategory: this.userData.companyInfo.companyCategory,
+      email: this.userData.companyInfo.email,
+      phone: this.userData.companyInfo.phone, 
+      description: this.userData.companyInfo.description,
+      address: this.userData.companyInfo.address,
+      website: this.userData.companyInfo.website,
+      socialMedia: this.userData.companyInfo.socialMedia,
+      _filename: this.userData.companyInfo._filename
     }
   };
 
@@ -32,8 +34,10 @@ export class CompanyInfoComponent {
       next: (response) => {
         this.userData.companyInfo = response.companyInfo;
         localStorage.setItem('userData', JSON.stringify(this.userData));
-
-        console.log('Company info updated successfully');
+        this.text = 'Company information updated successfully!';
+        setTimeout(() => {
+          this.text = '';
+        }, 2000);
       },
       error: (error) => {
         console.error('Update failed:', error.error.error);
