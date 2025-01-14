@@ -22,14 +22,14 @@ export class HeaderComponent implements OnInit {
   token = localStorage.getItem('authToken');
 
   vacancy = {
-    companyId: this.user.id,
+    companyId: this.user?.id || '',
     category: '',
     name: '',
     logo: '',
     description: '',
     location: '',
     salary: '',
-    company: this.user.companyInfo.companyName,
+    company: this.user?.companyInfo?.companyName || '',
     closingDate: new Date(),
     employmentType: '',
   };
@@ -69,7 +69,9 @@ export class HeaderComponent implements OnInit {
   }
 
   toggleBurgerMenu() {
-    this.burgerM = !this.burgerM;
+    if(this.user && this.token){
+      this.burgerM = !this.burgerM;
+    }
   }
 
   // Click Outside function for burger menu

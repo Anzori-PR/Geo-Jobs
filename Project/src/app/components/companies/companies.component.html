@@ -54,14 +54,14 @@
     <!-- Vacancys -->
     <div class="w-full px-6 flex flex-wrap gap-4">
         <div class="flex bg-white border p-6 w-72 hover:border-blue-500 hover:shadow cursor-pointer">
-            <div class="w-full flex flex-col gap-5">
+            <div class="w-full flex flex-col gap-5" *ngFor="let data of Company">
                 <div class="logo w-20 h-20 m-auto">
                     <img class="rounded-full" src="../../../assets/images/New-Project-2024-08-20T104229.775.png" alt="">
                 </div>
     
                 <div class="flex flex-col items-center gap-3">
-                    <h2 class="text-blue-400">IT, Computer Science</h2>
-                    <h1 class="text-black text-2xl font-semibold">Bank Of Georgia</h1>
+                    <h2 class="text-blue-400">{{ data.companyInfo.companyCategory }}</h2>
+                    <h1 class="text-black text-2xl font-semibold" [routerLink]="['/Company-detail', data.userId]">{{ data.companyInfo.companyName }}</h1>
                     <p class="flex gap-1 text-gray-400">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
@@ -70,146 +70,6 @@
                         Tbilisi  
                     </p>
                     <div class="border p-2 rounded-md border-blue-400">7 - Vacancy</div>
-                </div>
-            </div>
-        </div>
-        <div class="flex bg-white border p-6 w-72 hover:border-blue-500 hover:shadow cursor-pointer">
-            <div class="w-full flex flex-col gap-5">
-                <div class="logo w-20 h-20 m-auto">
-                    <img class="rounded-full" src="../../../assets/images/New-Project-2024-08-20T104229.775.png" alt="">
-                </div>
-    
-                <div class="flex flex-col items-center gap-3">
-                    <h2 class="text-blue-400">IT, Computer Science</h2>
-                    <h1 class="text-black text-2xl font-semibold">Bank Of Georgia</h1>
-                    <p class="flex gap-1 text-gray-400">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-                        </svg>
-                        Tbilisi  
-                    </p>
-                    <div class="border p-2 rounded-md border-blue-400">7 - Vacancy</div>
-                </div>
-            </div>
-        </div>
-        <div class="flex bg-white border p-6 w-72 hover:border-blue-500 hover:shadow cursor-pointer">
-            <div class="w-full flex flex-col gap-5">
-                <div class="logo w-20 h-20 m-auto">
-                    <img class="rounded-full" src="../../../assets/images/New-Project-2024-08-20T104229.775.png" alt="">
-                </div>
-    
-                <div class="flex flex-col items-center gap-3">
-                    <h2 class="text-blue-400">IT, Computer Science</h2>
-                    <h1 class="text-black text-2xl font-semibold">Bank Of Georgia</h1>
-                    <p class="flex gap-1 text-gray-400">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-                        </svg>
-                        Tbilisi  
-                    </p>
-                    <div class="border p-2 rounded-md border-blue-400">7 - Vacancy</div>
-                </div>
-            </div>
-        </div>
-        <div class="flex bg-white border p-6 w-72 hover:border-blue-500 hover:shadow cursor-pointer">
-            <div class="w-full flex flex-col gap-5">
-                <div class="logo w-20 h-20 m-auto">
-                    <img class="rounded-full" src="../../../assets/images/New-Project-2024-08-20T104229.775.png" alt="">
-                </div>
-    
-                <div class="flex flex-col items-center gap-3">
-                    <h2 class="text-blue-400">IT, Computer Science</h2>
-                    <h1 class="text-black text-2xl font-semibold">Bank Of Georgia</h1>
-                    <p class="flex gap-1 text-gray-400">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-                        </svg>
-                        Tbilisi  
-                    </p>
-                    <div class="border p-2 rounded-md border-blue-400">7 - Vacancy</div>
-                </div>
-            </div>
-        </div>
-        <div class="flex bg-white border p-6 w-72 hover:border-blue-500 hover:shadow cursor-pointer">
-            <div class="w-full flex flex-col gap-5">
-                <div class="logo w-20 h-20 m-auto">
-                    <img class="rounded-full" src="../../../assets/images/New-Project-2024-08-20T104229.775.png" alt="">
-                </div>
-    
-                <div class="flex flex-col items-center gap-3">
-                    <h2 class="text-blue-400">IT, Computer Science</h2>
-                    <h1 class="text-black text-2xl font-semibold">Bank Of Georgia</h1>
-                    <p class="flex gap-1 text-gray-400">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-                        </svg>
-                        Tbilisi  
-                    </p>
-                    <div class="border p-2 rounded-md border-blue-400">7 - Vacancy</div>
-                </div>
-            </div>
-        </div>
-        <div class="flex bg-white border p-6 w-72 hover:border-blue-500 hover:shadow cursor-pointer">
-            <div class="w-full flex flex-col gap-5">
-                <div class="logo w-20 h-20 m-auto">
-                    <img class="rounded-full" src="../../../assets/images/New-Project-2024-08-20T104229.775.png" alt="">
-                </div>
-    
-                <div class="flex flex-col items-center gap-3">
-                    <h2 class="text-blue-400">IT, Computer Science</h2>
-                    <h1 class="text-black text-2xl font-semibold">Bank Of Georgia</h1>
-                    <p class="flex gap-1 text-gray-400">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-                        </svg>
-                        Tbilisi  
-                    </p>
-                    <div class="border p-2 rounded-md border-blue-400">7 - Vacancy</div>
-                </div>
-            </div>
-        </div>
-        <div class="flex bg-white border p-6 w-72 hover:border-blue-500 hover:shadow cursor-pointer">
-            <div class="w-full flex flex-col gap-5">
-                <div class="logo w-20 h-20 m-auto">
-                    <img class="rounded-full" src="../../../assets/images/New-Project-2024-08-20T104229.775.png" alt="">
-                </div>
-    
-                <div class="flex flex-col items-center gap-3">
-                    <h2 class="text-blue-400">IT, Computer Science</h2>
-                    <h1 class="text-black text-2xl font-semibold">Bank Of Georgia</h1>
-                    <p class="flex gap-1 text-gray-400">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-                        </svg>
-                        Tbilisi  
-                    </p>
-                    <div class="border p-2 rounded-md border-blue-400">7 - Vacancy</div>
-                </div>
-            </div>
-        </div>
-        <div class="flex bg-white border p-6 w-72 hover:border-blue-500 hover:shadow cursor-pointer">
-            <div class="w-full flex flex-col gap-5">
-                <div class="logo w-20 h-20 m-auto">
-                    <img class="rounded-full" src="../../../assets/images/New-Project-2024-08-20T104229.775.png" alt="">
-                </div>
-    
-                <div class="flex flex-col items-center gap-3">
-                    <h2 class="text-blue-400">IT, Computer Science</h2>
-                    <h1 class="text-black text-2xl font-semibold">Bank Of Georgia</h1>
-                    <p class="flex gap-1 text-gray-400">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-                        </svg>
-                        Tbilisi  
-                    </p>
-                    <div class="border p-2 px-3 rounded-md border-blue-400">7 - Vacancy</div>
                 </div>
             </div>
         </div>

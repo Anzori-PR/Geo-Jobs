@@ -31,6 +31,14 @@ export class DataService {
     return this.HttpClient.post<any>(`${this.api}/auth/login`, userData);
   }
 
+  getAllCompany(): Observable<any> {
+    return this.HttpClient.get<any>(`${this.api}/auth/all`);
+  }
+
+  getCompanyById(id: string): Observable<any> {
+    return this.HttpClient.get<any>(`${this.api}/auth/CompanyDetails/${id}`);
+  }
+
   //Post vacany
   updateCompany(data: {
     userId: string,
@@ -62,6 +70,10 @@ export class DataService {
     employmentType: string,
   }) {
     return this.HttpClient.post<any>(`${this.api}/vacancy/add`, vacancy);
+  }
+
+  getAllVacancyByCompanyId(companyId: string): Observable<any> {
+    return this.HttpClient.get<any>(`${this.api}/vacancy/vacancies/${companyId}`);
   }
 }
 

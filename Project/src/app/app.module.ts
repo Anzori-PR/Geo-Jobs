@@ -15,6 +15,7 @@ import { JobDetailComponent } from './components/job-detail/job-detail.component
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CompanyInfoComponent } from './components/company-info/company-info.component';
+import { CompanyDetailComponent } from './components/company-detail/company-detail.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CompanyInfoComponent } from './components/company-info/company-info.com
     LoginComponent,
     RegisterComponent,
     JobDetailComponent,
-    CompanyInfoComponent
+    CompanyInfoComponent,
+    CompanyDetailComponent
   ],
   imports: [
     BrowserModule,

@@ -25,7 +25,7 @@
     <!-- Burger Menu -->
     <div *ngIf="burgerM"
         class="bg-white rounded-sm p-2 text-black text-base font-bold absolute right-6 top-20 list-none text-center shadow-lg">
-        <li routerLink="/CompanyInfo"
+        <li *ngIf="newUser?.role == 'company'" routerLink="/CompanyInfo" 
             class="py-2 px-4 cursor-pointer hover:bg-blue-500 hover:text-white transition-colors">
             My Company
         </li>
