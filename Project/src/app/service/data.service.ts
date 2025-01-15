@@ -18,12 +18,34 @@ export class DataService {
     return this.HttpClient.get<any>(`${this.api}/vacancy/all`);
   }
 
+  searchVacancy(name: string, category: string, location: string): Observable<any> {
+    const params = {
+      name: name,
+      category: category,
+      location: location
+    };
+    return this.HttpClient.get<any>(`${this.api}/vacancy/search`, { params });
+  }
+
   getDetail(id: string): Observable<any> {
     return this.HttpClient.get<any>(`${this.api}/vacancy/details/${id}`);
   }
 
   // Authentication
-  register(userData: { name: string; email: string; password: string; role: string; companyInfo?: object }): Observable<any> {
+  register(userData: {
+    name: string; email: string; password: string; role: string;
+    companyInfo: {
+      companyName: string;
+      companyCategory: string;
+      email: string;
+      phone: string;
+      description: string;
+      address: string;
+      website: string;
+      socialMedia: string;
+      _filename: string;
+    };
+  }): Observable<any> {
     return this.HttpClient.post<any>(`${this.api}/auth/register`, userData);
   }
 
@@ -35,8 +57,21 @@ export class DataService {
     return this.HttpClient.get<any>(`${this.api}/auth/all`);
   }
 
+  searchCompany(companyName: string, companyCategory: string, address: string): Observable<any> {
+    const params = {
+      companyName: companyName,
+      companyCategory: companyCategory,
+      address: address
+    };
+    return this.HttpClient.get<any>(`${this.api}/auth/search`, { params });
+  }
+
   getCompanyById(id: string): Observable<any> {
     return this.HttpClient.get<any>(`${this.api}/auth/CompanyDetails/${id}`);
+  }
+
+  getCompanyVacancyNumber(id: string): Observable<any> {
+    return this.HttpClient.get<any>(`${this.api}/auth/CompanyVacancyNumber/${id}`);
   }
 
   //Post vacany

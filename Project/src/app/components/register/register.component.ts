@@ -11,13 +11,13 @@ export class RegisterComponent {
 
   text!: string;
 
-  userData = {
+  userData: any = {
     name: '',
     email: '',
     password: '',
     role: '',
     companyInfo: {
-        companyName: '',
+        companyName: 'Undefined',
         companyCategory: '',
         email: '',
         phone: '',

@@ -10,12 +10,28 @@ export class CompaniesComponent implements OnInit {
 
   Company: any;
 
-  constructor(private service : DataService) { }
+  searchName: string = '';
+  searchCategory: string = '';
+  searchLocation: string = '';
+
+  constructor(private service: DataService) { }
 
   ngOnInit(): void {
     this.service.getAllCompany().subscribe(res => {
       this.Company = res;
-      console.log(this.Company);
+
+      this.Company.forEach((company: any) => {
+        this.service.getAllVacancyByCompanyId(company.userId).subscribe(num => {
+          company.numberOfVacancies = num.length;
+        });
+      });
+
+    });
+  }
+
+  search() {
+    this.service.searchCompany(this.searchName, this.searchCategory, this.searchLocation).subscribe(res => {
+      this.Company = res;
     });
   }
 

@@ -19,7 +19,7 @@
                         </svg>
                         {{ data.companyInfo.address }}
                     </h1>
-                    <span class="w-max p-2 border border-white rounded-md">Open jobs 0</span>
+                    <span class="w-max p-2 px-4 border border-blue-500 rounded-md">Open jobs {{ vacancyNumber }}</span>
                 </div>
             </div>
         </div>
@@ -28,12 +28,13 @@
         <!-- About company -->
         <div class="px-6 py-4">
             <h1 class="font-bold text-2xl py-3">About Company</h1>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga distinctio quis saepe molestiae,
-                perferendis laboriosam, sapiente vel iusto nulla odio rem nobis fugit. Praesentium esse neque fugit. Ex,
-                quod animi. </p>
+            <p>{{ data.companyInfo.description }} </p>
         </div>
-        <!-- Vacancies -->
 
+        <!-- Vacancies -->
+        <div class="px-6 py-4">
+            <h1 class="font-bold text-2xl py-3">Open Position</h1>
+        </div>
         <div class="w-full px-6 flex flex-col gap-4">
             <div *ngFor="let vacancy of vacancyData">
                 <div
@@ -98,24 +99,24 @@
             <div class="w-96 bg-slate-50 p-4 rounded-lg shadow-md  mx-auto">
                 <h2 class="text-lg font-semibold mb-4">Information</h2>
 
-                <div class="mb-4 border-b border-gray-300 pb-2">
+                <div class="mb-4 border-b border-gray-300 pb-2 flex justify-between">
                     <span class="text-gray-500">Section Name:</span>
-                    <a href="#" class="text-blue-500 hover:underline ml-2">IT Technologies</a>
+                    <a href="#" class="text-blue-500 hover:underline ml-2">{{ data.companyInfo.companyCategory }}</a>
                 </div>
 
-                <div class="mb-4 border-b border-gray-300 pb-2">
+                <div class="mb-4 border-b border-gray-300 pb-2 flex justify-between">
                     <span class="text-gray-500">City:</span>
-                    <span class="ml-2">Batumi</span>
+                    <span class="ml-2">{{ data.companyInfo.address }}</span>
                 </div>
 
-                <div class="mb-4 border-b border-gray-300 pb-2">
+                <div class="mb-4 border-b border-gray-300 pb-2 flex justify-between">
                     <span class="text-gray-500">Email:</span>
-                    <span class="ml-2">smmpixelpulsegmail.com</span>
+                    <span class="ml-2">{{ data.companyInfo.email }}</span>
                 </div>
 
-                <div class="pb-2">
+                <div class="pb-2 flex justify-between">
                     <span class="text-gray-500">Socials:</span>
-                    <!-- Add social links or icons here -->
+                    {{ data.companyInfo.socialMedia }}
                 </div>
             </div>
         </div>

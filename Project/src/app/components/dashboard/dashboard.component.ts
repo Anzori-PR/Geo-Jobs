@@ -7,12 +7,15 @@ import { DataService } from 'src/app/service/data.service';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent implements OnInit{
+export class DashboardComponent implements OnInit {
 
   Data: any;
   newUser: any;
+  searchName: string = '';
+  searchCategory: string = '';
+  searchLocation: string = '';
 
-  constructor(private service: DataService, private router: Router) {}
+  constructor(private service: DataService, private router: Router) { }
 
   ngOnInit(): void {
     this.service.getData().subscribe(res => {
@@ -21,7 +24,7 @@ export class DashboardComponent implements OnInit{
 
     const user = JSON.parse(localStorage.getItem('userData') || '{}');
     const token = localStorage.getItem('authToken');
-  
+
     if (user && token) {
       this.newUser = user;
     } else {
@@ -29,5 +32,11 @@ export class DashboardComponent implements OnInit{
     }
   }
 
-  
+  search() {
+    this.service.searchVacancy(this.searchName, this.searchCategory, this.searchLocation).subscribe(res => {
+      this.Data = res;
+    })
+  }
+
+
 }

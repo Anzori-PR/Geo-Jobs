@@ -12,6 +12,7 @@ export class CompanyDetailComponent implements OnInit {
   Data: any;
   vacancyData: any;
   id: any;
+  vacancyNumber: any;
 
   constructor(private service : DataService, private router : ActivatedRoute) { }
 
@@ -25,8 +26,8 @@ export class CompanyDetailComponent implements OnInit {
     })
 
     this.service.getAllVacancyByCompanyId(this.id).subscribe(res => {
-      this.vacancyData =  res;
-      console.log(this.vacancyData);
+      this.vacancyData = res;
+      this.vacancyNumber = this.vacancyData.length;
     })
   }
   

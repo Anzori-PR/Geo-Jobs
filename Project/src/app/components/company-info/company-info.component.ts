@@ -44,4 +44,15 @@ export class CompanyInfoComponent {
       }
     });
   }
+
+  onFileChange(event: any) {
+
+    const file = event.target.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+      console.log('File selected:', file.name);
+
+    }
+  }
 }
