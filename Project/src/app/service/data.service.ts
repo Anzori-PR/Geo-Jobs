@@ -110,5 +110,10 @@ export class DataService {
   getAllVacancyByCompanyId(companyId: string): Observable<any> {
     return this.HttpClient.get<any>(`${this.api}/vacancy/vacancies/${companyId}`);
   }
+
+  deleteVacancy(vacancyId: string): Observable<any> {
+    return this.HttpClient.delete<any>(`${this.api}/vacancy/delete/${vacancyId}`);
+  }
+
 }
 

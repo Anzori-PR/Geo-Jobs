@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { DataService } from 'src/app/service/data.service';
 
@@ -7,6 +7,7 @@ import { DataService } from 'src/app/service/data.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
+
 export class HeaderComponent implements OnInit {
 
   currentUrl: string | null = null;
@@ -53,6 +54,8 @@ export class HeaderComponent implements OnInit {
           this.destination = 'Job-detail';
         } else if (this.currentUrl === '/CompanyInfo') {
           this.destination = 'Company Information';
+        } else if (this.currentUrl === '/My-Vacancies') {
+          this.destination = 'My Vacancies';
         } else {
           this.destination = 'FAQ'
         }
@@ -88,8 +91,19 @@ export class HeaderComponent implements OnInit {
   addVacancy() {
     this.service.addVacancy(this.vacancy).subscribe({
       next: (response) => {
-        console.log(response)
         this.text = "Added successfully";
+        this.vacancy = {
+          companyId: this.user?.id || '',
+          category: '',
+          name: '',
+          logo: '',
+          description: '',
+          location: '',
+          salary: '',
+          company: this.user?.companyInfo?.companyName || '',
+          closingDate: new Date(),
+          employmentType: '',
+        };
         setTimeout(() => {
           this.text = '';
           this.closeAddVacancy();
@@ -118,4 +132,10 @@ export class HeaderComponent implements OnInit {
     this.active = false;
   }
 
+  logOut() {
+    localStorage.removeItem('authToken');
+    localStorage.removeItem('userData');
+
+    window.location.href = '/';
+  }
 }

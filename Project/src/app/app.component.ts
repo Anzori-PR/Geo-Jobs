@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DataService } from './service/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +10,6 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 })
 export class AppComponent {
   title = 'Project';
+
   
 }

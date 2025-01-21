@@ -3,6 +3,7 @@ import { NgModel } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginComponent } from '../login/login.component';
 import { RegisterComponent } from '../register/register.component';
+import { DataService } from 'src/app/service/data.service';
 
 @Component({
   selector: 'app-menu',
@@ -17,7 +18,7 @@ export class MenuComponent implements OnInit {
 
   auth: boolean = true;
 
-  constructor() { }
+  constructor(private service : DataService, private router : Router) { }
 
   ngOnInit(): void {
     const user = JSON.parse(localStorage.getItem('userData') || '{}');
@@ -27,6 +28,10 @@ export class MenuComponent implements OnInit {
       this.auth = false;
     } else {
       this.auth = true;
+    }
+
+    if (token) {
+      this.auth = false;
     }
   }
 
@@ -43,7 +48,8 @@ export class MenuComponent implements OnInit {
   logOut() {
     localStorage.removeItem("authToken");
     localStorage.removeItem("userData");
-    window.location.reload();
+
+    window.location.href = '/';
   }
 
   closePopup() {

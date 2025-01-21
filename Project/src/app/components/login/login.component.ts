@@ -21,7 +21,6 @@ export class LoginComponent implements OnInit{
 
   constructor(private service: DataService, private router : Router) {}
 
-
   ngOnInit(): void {
   }
 
@@ -34,9 +33,10 @@ export class LoginComponent implements OnInit{
         localStorage.setItem('authToken', response.token);
         localStorage.setItem('userData', JSON.stringify(response.user));
 
-        setTimeout(() => {
-          window.location.reload();
-        }, 200);
+        setTimeout(() => {  
+          window.location.href = '/'; 
+        }, 0);
+
       },
       error: (error) => {
         this.text = 'Login failed:' + ' ' + error.error.error;

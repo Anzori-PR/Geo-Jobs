@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CompanyInfoComponent } from './components/company-info/company-info.component';
 import { CompanyDetailComponent } from './components/company-detail/company-detail.component';
+import { MyVacanciesComponent } from './components/my-vacancies/my-vacancies.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { CompanyDetailComponent } from './components/company-detail/company-deta
     RegisterComponent,
     JobDetailComponent,
     CompanyInfoComponent,
-    CompanyDetailComponent
+    CompanyDetailComponent,
+    MyVacanciesComponent
   ],
   imports: [
     BrowserModule,
