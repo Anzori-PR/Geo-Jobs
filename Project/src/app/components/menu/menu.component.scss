@@ -19,3 +19,34 @@
     box-shadow: 0px 8px 8px -2px rgb(0, 25, 17); 
     background-color: #EDF4F2;
 }
+
+.active_bottom {
+    box-sizing: border-box;
+    padding: 10px;
+    color: black;
+    background-color: #48ff00;
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .menu {
+        color: rgb(255, 255, 255);
+        font-size: 20px;
+        font-weight: bold;
+        width: 15rem;
+        padding: 1rem 3rem 1rem 3rem;
+        border-start-end-radius: 0.5rem;
+        border-end-end-radius: 0.5rem;
+    }
+    .active {
+        color: black;
+        box-shadow: 0px 8px 8px -2px rgb(0, 25, 17); 
+        background-color: #EDF4F2;
+    }
+    
+}

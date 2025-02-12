@@ -1,4 +1,4 @@
-<div class="flex  min-h-screen ml-72" style="background-color: #EDF4F2;" *ngFor="let data of Data">
+<div class="flex  min-h-screen ml-0 lg:ml-72 md:ml-64" style="background-color: #EDF4F2;" *ngFor="let data of Data">
     <div class="flex flex-col gap-5 w-full">
         <!-- Job header -->
         <div class="flex px-6 justify-between">
@@ -85,12 +85,12 @@
     <!-- Information Side bar -->
     <div class="flex flex-col px-6" style="width: 40rem;">
         <div class="sticky top-5">
-            <aside class="shadow-md rounded-md p-6 mb-10" style="background-color: #FDFDFD;">
-                <h2 class="text-xl font-bold text-gray-800 border-b border-gray-200 pb-2 mb-4">
+            <aside class="shadow-md rounded-md p-6 mb-10" style="background-color: #31473A">
+                <h2 class="text-xl font-bold text-white border-b border-gray-200 pb-2 mb-4">
                     <span>Employer</span>
                 </h2>
                 <div class="job-detail-employer-info">
-                    <h3 class="employer-title text-base font-semibold text-black hover:text-blue-600 hover:duration-200 mb-2 cursor-pointer">
+                    <h3 class="employer-title text-base font-semibold text-white hover:text-blue-600 hover:duration-200 mb-2 cursor-pointer">
                         <p [routerLink]="['/Company-detail', data.companyId]">
                             {{ data.company }}
                         </p>
@@ -98,32 +98,32 @@
                 </div>
             </aside>
 
-            <aside class="widget p-4 rounded-lg shadow-md" style="background-color: #FDFDFD;">
-                <h2 class="widget-title text-xl font-semibold mb-4">
-                    <span>Contact {{ data.company }}</span>
+            <aside class="widget p-4 rounded-lg shadow-md" style="background-color: #31473A;">
+                <h2 class="widget-title text-xl font-semibold mb-4 text-white">
+                    <span>Contact {{ data.company }}</span> 
                 </h2>
                 <div class="contact-form">
                     <form method="post" action="?" class="space-y-4">
                         <div class="grid grid-cols-1 gap-4">
                             <div class="form-group">
                                 <input type="text"
-                                    class="form-control w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    class="form-control w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2"
                                     name="subject" placeholder="Subject" required>
                             </div>
                             <div class="form-group">
                                 <input type="email"
-                                    class="form-control w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    class="form-control w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2"
                                     name="email" placeholder="E-mail" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <textarea
-                                class="form-control w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                class="form-control w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2"
                                 name="message" placeholder="Message" rows="4" required></textarea>
                         </div>
                         <input type="hidden" name="post_id" value="8559">
                         <button
-                            class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2"
                             name="contact-form">Send Message</button>
                     </form>
                 </div>

@@ -1,4 +1,4 @@
-<div class="flex pr-2 gap-4 min-h-screen ml-72" style="background-color: #EDF4F2;" *ngFor="let data of Data">
+<div class="flex pr-2 gap-4 min-h-screen ml-0 lg:ml-72 md:ml-64" style="background-color: #EDF4F2;" *ngFor="let data of Data">
     <div class="flex flex-col w-full">
         <!-- Job header -->
         <div class="flex px-6 pr-52 justify-between">
@@ -96,34 +96,34 @@
     <div class="px-4 flex flex-col">
         <div class="sticky top-5">
             <div class="flex flex-col gap-4 mb-10">
-                <div class="w-96 p-4 rounded-lg  mx-auto" style="background-color: #FDFDFD;">
+                <div class="w-96 p-4 rounded-lg  mx-auto text-white" style="background-color: #31473A;">
                     <h2 class="text-lg font-semibold mb-4">Information</h2>
 
                     <div class="mb-4 border-b border-gray-300 pb-2 flex justify-between">
-                        <span class="text-gray-500">Section Name:</span>
+                        <span class="text-white">Section Name:</span>
                         <a href="#" class="text-blue-500 hover:underline ml-2">{{ data.companyInfo.companyCategory
                             }}</a>
                     </div>
 
                     <div class="mb-4 border-b border-gray-300 pb-2 flex justify-between">
-                        <span class="text-gray-500">City:</span>
+                        <span class="text-white">City:</span>
                         <span class="ml-2">{{ data.companyInfo.address }}</span>
                     </div>
 
                     <div class="mb-4 border-b border-gray-300 pb-2 flex justify-between">
-                        <span class="text-gray-500">Email:</span>
+                        <span class="text-white">Email:</span>
                         <span class="ml-2">{{ data.companyInfo.email }}</span>
                     </div>
 
                     <div class="pb-2 flex justify-between">
-                        <span class="text-gray-500">Socials:</span>
+                        <span class="text-white">Socials:</span>
                         {{ data.companyInfo.socialMedia }}
                     </div>
                 </div>
             </div>
 
-            <aside class="widget p-4 rounded-lg shadow-md" style="background-color: #FDFDFD;">
-                <h2 class="widget-title text-xl font-semibold mb-4">
+            <aside class="widget p-4 rounded-lg shadow-md" style="background-color: #31473A;">
+                <h2 class="widget-title text-xl font-semibold mb-4 text-white">
                     <span>Contact {{ data.companyInfo.companyName }}</span>
                 </h2>
                 <div class="contact-form">
@@ -131,23 +131,23 @@
                         <div class="grid grid-cols-1 gap-4">
                             <div class="form-group">
                                 <input type="text"
-                                    class="form-control w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    class="form-control w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2"
                                     name="subject" placeholder="Subject" required>
                             </div>
                             <div class="form-group">
                                 <input type="email"
-                                    class="form-control w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    class="form-control w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2"
                                     name="email" placeholder="E-mail" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <textarea
-                                class="form-control w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                class="form-control w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2"
                                 name="message" placeholder="Message" rows="4" required></textarea>
                         </div>
                         <input type="hidden" name="post_id" value="8559">
                         <button
-                            class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2"
                             name="contact-form">Send Message</button>
                     </form>
                 </div>
