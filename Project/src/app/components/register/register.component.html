@@ -1,11 +1,11 @@
-<div class="fixed inset-0 items-center justify-center z-50 bg-white shadow-lg rounded-lg max-w-md h-fit py-7 mx-auto my-auto">
+<div class="fixed inset-0 items-center justify-center z-50 bg-white shadow-lg rounded-lg overflow-auto max-w-96 h-fit py-4 mx-auto my-auto">
     <span class="absolute right-3 top-3 cursor-pointer" (click)="close()">
         <svg data-slot="icon" aria-hidden="true" fill="none" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="size-6 text-black font-bold">
             <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
         </svg>
     </span>
-    <div class="flex items-center justify-center h-max">
-        <div class="bg-white rounded-lg max-w-sm w-full" (submit)="onSubmit()">
+    <div class="flex items-center justify-center h-max px-12">
+        <div class="bg-white rounded-lg w-ful" (submit)="onSubmit()">
             <h2 class="text-center mb-4 text-4xl font-extrabold text-gray-900">Sign Up</h2>
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-semibold mb-2">Upload Profile Image</label>

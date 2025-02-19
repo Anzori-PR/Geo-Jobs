@@ -1,13 +1,13 @@
-<div class="flex pr-2 gap-4 min-h-screen ml-0 lg:ml-72 md:ml-64" style="background-color: #EDF4F2;" *ngFor="let data of Data">
+<div class="flex flex-col pr-2 gap-4 min-h-screen ml-0 lg:ml-72 md:ml-64 xl:flex-row pb-24" style="background-color: #EDF4F2;" *ngFor="let data of Data">
     <div class="flex flex-col w-full">
         <!-- Job header -->
-        <div class="flex px-6 pr-52 justify-between">
-            <div class="flex gap-5 items-center">
+        <div class="flex px-6 justify-between items-center">
+            <div class="w-full flex flex-col gap-5 items-center min-[380px]:items-center min-[380px]:flex-row">
                 <div class="logo w-24 h-20">
                     <img class="rounded-full" src="../../../assets/images/New-Project-2024-08-20T104229.775.png" alt="">
                 </div>
 
-                <div class="flex flex-col gap-2">
+                <div class="flex flex-col gap-2 items-center min-[380px]:items-start">
                     <h2 class="text-black text-2xl font-semibold">{{ data.companyInfo.companyName }}</h2>
                     <h1 class="text-gray-600 text-base flex items-center gap-2">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -93,16 +93,15 @@
         </div>
     </div>
     <!-- Company Information -->
-    <div class="px-4 flex flex-col">
-        <div class="sticky top-5">
+    <div class="px-6 flex flex-col items-start">
+        <div class="w-full top-5 xl:sticky mb-20">
             <div class="flex flex-col gap-4 mb-10">
-                <div class="w-96 p-4 rounded-lg  mx-auto text-white" style="background-color: #31473A;">
+                <div class="w-full sm:w-96 p-4 rounded-lg mx-auto text-white" style="background-color: #31473A;">
                     <h2 class="text-lg font-semibold mb-4">Information</h2>
 
                     <div class="mb-4 border-b border-gray-300 pb-2 flex justify-between">
                         <span class="text-white">Section Name:</span>
-                        <a href="#" class="text-blue-500 hover:underline ml-2">{{ data.companyInfo.companyCategory
-                            }}</a>
+                        <a href="#" class="text-blue-500 hover:underline ml-2">{{ data.companyInfo.companyCategory }}</a>
                     </div>
 
                     <div class="mb-4 border-b border-gray-300 pb-2 flex justify-between">
@@ -122,7 +121,7 @@
                 </div>
             </div>
 
-            <aside class="widget p-4 rounded-lg shadow-md" style="background-color: #31473A;">
+            <aside class="widget p-4 rounded-lg shadow-md w-full sm:w-96" style="background-color: #31473A;">
                 <h2 class="widget-title text-xl font-semibold mb-4 text-white">
                     <span>Contact {{ data.companyInfo.companyName }}</span>
                 </h2>
