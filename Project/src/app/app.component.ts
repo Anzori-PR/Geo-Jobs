@@ -8,8 +8,17 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Project';
+  admin: boolean = false;
 
-  
+  ngOnInit() { 
+    const role = sessionStorage.getItem('role');
+    if (role === 'admin') {
+      this.admin = true;
+    } else {
+      this.admin = false; 
+    }
+  }
+
 }

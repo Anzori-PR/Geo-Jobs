@@ -17,6 +17,10 @@ import { FormsModule } from '@angular/forms';
 import { CompanyInfoComponent } from './components/company-info/company-info.component';
 import { CompanyDetailComponent } from './components/company-detail/company-detail.component';
 import { MyVacanciesComponent } from './components/my-vacancies/my-vacancies.component';
+import { AdminDashboardComponent } from './admin_panel/admin-dashboard/admin-dashboard.component';
+import { AdminUsersComponent } from './admin_panel/admin-users/admin-users.component';
+import { AdminVacanciesComponent } from './admin_panel/admin-vacancies/admin-vacancies.component';
+import { AdminCompaniesComponent } from './admin_panel/admin-companies/admin-companies.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,11 @@ import { MyVacanciesComponent } from './components/my-vacancies/my-vacancies.com
     JobDetailComponent,
     CompanyInfoComponent,
     CompanyDetailComponent,
-    MyVacanciesComponent
+    MyVacanciesComponent,
+    AdminDashboardComponent,
+    AdminUsersComponent,
+    AdminVacanciesComponent,
+    AdminCompaniesComponent
   ],
   imports: [
     BrowserModule,

@@ -7,19 +7,19 @@ import { DataService } from 'src/app/service/data.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit{
+export class LoginComponent implements OnInit {
 
   @Output() closePopup = new EventEmitter<void>();
   @Output() goRegisterPopup = new EventEmitter<void>();
 
   userData = {
     email: '',
-    password: ''  
+    password: ''
   };
 
   text!: string;
 
-  constructor(private service: DataService, private router : Router) {}
+  constructor(private service: DataService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -30,12 +30,21 @@ export class LoginComponent implements OnInit{
       next: (response) => {
         this.text = "Login successful";
 
-        localStorage.setItem('authToken', response.token);
-        localStorage.setItem('userData', JSON.stringify(response.user));
+        if (response?.token && response.user) {
+          localStorage.setItem('authToken', response.token);
+          localStorage.setItem('userData', JSON.stringify(response.user));
 
-        setTimeout(() => {  
-          window.location.href = '/'; 
-        }, 0);
+          setTimeout(() => {
+            window.location.href = '/';
+          }, 0);
+        }else{
+          sessionStorage.setItem('role', response.role);
+        }
+
+        if (response.role === 'admin') {
+          window.location.href = '/Admin/Dashboard';
+          this.close();
+        }
 
       },
       error: (error) => {

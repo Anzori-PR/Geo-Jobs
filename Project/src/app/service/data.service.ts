@@ -10,7 +10,7 @@ export class DataService {
   api: string;
 
   constructor(private HttpClient: HttpClient) {
-    this.api = 'http://192.168.100.5:3001';
+    this.api = 'http://192.168.100.3:3001';
   }
 
   // Fetch

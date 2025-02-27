@@ -8,6 +8,11 @@ import { JobDetailComponent } from './components/job-detail/job-detail.component
 import { CompanyInfoComponent } from './components/company-info/company-info.component';
 import { CompanyDetailComponent } from './components/company-detail/company-detail.component';
 import { MyVacanciesComponent } from './components/my-vacancies/my-vacancies.component';
+import { authGuard } from './auth.guard';
+import { AdminDashboardComponent } from './admin_panel/admin-dashboard/admin-dashboard.component';
+import { AdminUsersComponent } from './admin_panel/admin-users/admin-users.component';
+import { AdminVacanciesComponent } from './admin_panel/admin-vacancies/admin-vacancies.component';
+import { AdminCompaniesComponent } from './admin_panel/admin-companies/admin-companies.component';
 
 const routes: Routes = [
   {path: '', redirectTo : 'Dashboard', pathMatch : 'full'},
@@ -18,7 +23,11 @@ const routes: Routes = [
   {path: 'CompanyInfo', component : CompanyInfoComponent},
   {path: 'Job-detail/:id', component : JobDetailComponent},
   {path: 'Company-detail/:id', component : CompanyDetailComponent},
-  {path: 'My-Vacancies', component : MyVacanciesComponent}
+  {path: 'My-Vacancies', component : MyVacanciesComponent},
+  {path: 'Admin/Dashboard', component : AdminDashboardComponent, canActivate: [authGuard]},
+  {path: 'Admin/Users', component : AdminUsersComponent, canActivate: [authGuard]},
+  {path: 'Admin/Vacancies', component : AdminVacanciesComponent, canActivate: [authGuard]},
+  {path: 'Admin/Companies', component : AdminCompaniesComponent, canActivate: [authGuard]}
 ];
 
 @NgModule({

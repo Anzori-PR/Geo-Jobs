@@ -1,4 +1,6 @@
-<app-menu class="fixed"></app-menu>
-<app-header></app-header>
-<app-register class="hidden"></app-register>
+<span *ngIf="!admin">
+    <app-menu class="fixed"></app-menu>
+    <app-header></app-header>
+    <app-register class="hidden"></app-register>
+</span>
 <router-outlet></router-outlet>
