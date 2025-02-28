@@ -10,7 +10,7 @@ export class DataService {
   api: string;
 
   constructor(private HttpClient: HttpClient) {
-    this.api = 'http://192.168.100.3:3001';
+    this.api = 'http://192.168.100.4:3001';
   }
 
   // Fetch
@@ -51,6 +51,11 @@ export class DataService {
 
   login(userData: { email: string; password: string }): Observable<any> {
     return this.HttpClient.post<any>(`${this.api}/auth/login`, userData);
+  }
+
+  
+  getAllUsers(): Observable<any> {
+    return this.HttpClient.get<any>(`${this.api}/auth/users`);
   }
 
   getAllCompany(): Observable<any> {
@@ -113,6 +118,10 @@ export class DataService {
 
   deleteVacancy(vacancyId: string): Observable<any> {
     return this.HttpClient.delete<any>(`${this.api}/vacancy/delete/${vacancyId}`);
+  }
+
+  deleteUser(userId: string): Observable<any> {
+    return this.HttpClient.delete<any>(`${this.api}/auth/delete/${userId}`);
   }
 
 }
