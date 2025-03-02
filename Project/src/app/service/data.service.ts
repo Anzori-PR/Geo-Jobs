@@ -18,9 +18,10 @@ export class DataService {
     return this.HttpClient.get<any>(`${this.api}/vacancy/all`);
   }
 
-  searchVacancy(name: string, category: string, location: string): Observable<any> {
+  searchVacancy(name: string, category: string, location: string, status: string): Observable<any> {
     const params = {
       name: name,
+      status: status,
       category: category,
       location: location
     };
@@ -56,6 +57,13 @@ export class DataService {
   
   getAllUsers(): Observable<any> {
     return this.HttpClient.get<any>(`${this.api}/auth/users`);
+  }
+
+  searchUser(name: string): Observable<any> {
+    const params = {
+      name: name
+    };
+    return this.HttpClient.get<any>(`${this.api}/auth/searchUser`, { params });
   }
 
   getAllCompany(): Observable<any> {
@@ -124,5 +132,12 @@ export class DataService {
     return this.HttpClient.delete<any>(`${this.api}/auth/delete/${userId}`);
   }
 
+  approveVacancy(vacancyId: string): Observable<any> {
+    return this.HttpClient.put<any>(`${this.api}/vacancy/updateApprove/${vacancyId}`, {});
+  }
+
+  rejectVacancy(vacancyId: string): Observable<any> {
+    return this.HttpClient.put<any>(`${this.api}/vacancy/updateReject/${vacancyId}`, {});
+  }
 }
 

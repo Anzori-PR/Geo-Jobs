@@ -7,14 +7,6 @@
     <div class="flex items-center justify-center h-max px-12">
         <div class="bg-white rounded-lg w-ful" (submit)="onSubmit()">
             <h2 class="text-center mb-4 text-4xl font-extrabold text-gray-900">Sign Up</h2>
-            <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-semibold mb-2">Upload Profile Image</label>
-                <div class="relative">
-                  <label for="profileImageUpload" class="form-input text-sm content-center w-24 h-24 rounded-full flex justify-center m-auto border text-gray-700 focus:ring-blue-500 bgima bg-cover" style="background-image: url(../../../assets/images/default.webp); cursor: pointer;">
-                  </label>
-                  <input type="file" id="profileImageUpload" accept="image/*" class="hidden" />
-                </div>
-            </div>
             <form>
                 <div class="mb-4">
                     <label for="fullName" class="block text-gray-700 text-sm font-semibold mb-2">Full Name *</label>
@@ -33,12 +25,15 @@
                     <input type="password" [(ngModel)]="userData.password" name="password" id="Cpassword" class="form-input w-full px-4 py-2 border rounded-lg text-gray-700 focus:ring-blue-500" required placeholder="••••••••">
                 </div>
 
-                <div class="mb-2 flex justify-start bg-white text-black">
-                    <label for="role">Role:</label>
-                    <select class="ml-5 text-black" id="role" [(ngModel)]="userData.role" name="role" required>
-                        <option value="user">User</option>
-                        <option value="company">Company</option>
-                    </select>
+                <div class="flex gap-2 items-center py-3">
+                    <label class="flex items-center space-x-2 cursor-pointer">
+                        <input type="radio" name="role" value="user" [(ngModel)]="userData.role" class="w-4 h-4 text-blue-600 focus:ring-blue-500">
+                        <span class="text-gray-700">User</span>
+                    </label>
+                    <label class="flex items-center space-x-2 cursor-pointer">
+                        <input type="radio" name="role" value="company" [(ngModel)]="userData.role" class="w-4 h-4 text-green-600 focus:ring-green-500">
+                        <span class="text-gray-700">Company</span>
+                    </label>
                 </div>
               
                 

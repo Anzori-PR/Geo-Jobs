@@ -10,9 +10,9 @@ export class AdminDashboardComponent implements OnInit {
 
   companyCount : number = 0;
   vacancyCount : number = 0;
-  vacancyData: any;
+  vacancyData: any[] = [];
   userCount : number = 0;
-  users: any;
+  users: any[] = [];
 
   constructor(private service : DataService) { }
 

@@ -20,7 +20,6 @@ import { MyVacanciesComponent } from './components/my-vacancies/my-vacancies.com
 import { AdminDashboardComponent } from './admin_panel/admin-dashboard/admin-dashboard.component';
 import { AdminUsersComponent } from './admin_panel/admin-users/admin-users.component';
 import { AdminVacanciesComponent } from './admin_panel/admin-vacancies/admin-vacancies.component';
-import { AdminCompaniesComponent } from './admin_panel/admin-companies/admin-companies.component';
 
 @NgModule({
   declarations: [
@@ -39,8 +38,7 @@ import { AdminCompaniesComponent } from './admin_panel/admin-companies/admin-com
     MyVacanciesComponent,
     AdminDashboardComponent,
     AdminUsersComponent,
-    AdminVacanciesComponent,
-    AdminCompaniesComponent
+    AdminVacanciesComponent
   ],
   imports: [
     BrowserModule,

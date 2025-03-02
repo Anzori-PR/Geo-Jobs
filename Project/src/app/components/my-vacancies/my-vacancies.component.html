@@ -100,6 +100,15 @@
                         {{ vacancy.closingDate?.split('T')[0] }}
                     </p>
                 </div>
+                <div class="flex justify-end items-center">
+                    <span class="p-2 w-fit rounded-md text-white" [ngClass]="{
+                        'bg-yellow-500': vacancy.status === 'pending',
+                        'bg-green-600': vacancy.status === 'approved',
+                        'bg-red-600': vacancy.status === 'rejected'
+                      }">
+                        {{ vacancy.status }}
+                    </span>
+                </div>
             </div>
         </div>
     </div>

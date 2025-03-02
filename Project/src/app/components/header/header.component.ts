@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
   burgerM: boolean = false;
 
   userData = localStorage.getItem('userData') || '{}';
-  user = JSON.parse(this.userData);
+  user = JSON.parse(this.userData) || '';
   token = localStorage.getItem('authToken');
 
   vacancy = {

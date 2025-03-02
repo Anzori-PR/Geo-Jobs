@@ -12,7 +12,6 @@ import { authGuard } from './auth.guard';
 import { AdminDashboardComponent } from './admin_panel/admin-dashboard/admin-dashboard.component';
 import { AdminUsersComponent } from './admin_panel/admin-users/admin-users.component';
 import { AdminVacanciesComponent } from './admin_panel/admin-vacancies/admin-vacancies.component';
-import { AdminCompaniesComponent } from './admin_panel/admin-companies/admin-companies.component';
 
 const routes: Routes = [
   {path: '', redirectTo : 'Dashboard', pathMatch : 'full'},
@@ -26,8 +25,7 @@ const routes: Routes = [
   {path: 'My-Vacancies', component : MyVacanciesComponent},
   {path: 'Admin/Dashboard', component : AdminDashboardComponent, canActivate: [authGuard]},
   {path: 'Admin/Users', component : AdminUsersComponent, canActivate: [authGuard]},
-  {path: 'Admin/Vacancies', component : AdminVacanciesComponent, canActivate: [authGuard]},
-  {path: 'Admin/Companies', component : AdminCompaniesComponent, canActivate: [authGuard]}
+  {path: 'Admin/Vacancies', component : AdminVacanciesComponent, canActivate: [authGuard]}
 ];
 
 @NgModule({

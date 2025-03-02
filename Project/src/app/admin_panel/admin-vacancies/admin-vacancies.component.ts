@@ -1,10 +1,60 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/service/data.service';
 
 @Component({
   selector: 'app-admin-vacancies',
   templateUrl: './admin-vacancies.component.html',
   styleUrls: ['./admin-vacancies.component.scss']
 })
-export class AdminVacanciesComponent {
+export class AdminVacanciesComponent implements OnInit {
+  vacancyData: any;
+  deleteAlert: boolean = false; 
+  searchName: string = '';
+  searchCategory: string = '';
+  searchLocation: string = '';
+  status: string = '';
+
+  constructor(private service : DataService) { }
+
+  ngOnInit(): void {
+    this.service.getData().subscribe((data) => {
+      this.vacancyData = data;
+    });
+  }
+
+
+  deleteVacancyById(id: any){
+    this.service.deleteVacancy(id).subscribe((data) => {
+      window.location.href = '/Admin/Vacancies';
+    });
+  }
+
+  searchUser() {
+
+  }
+
+  searchVacancy() {
+    this.service.searchVacancy(this.searchName, this.searchCategory, this.searchLocation, this.status).subscribe(res => {
+      this.vacancyData = res;
+    })
+
+  }
+  
+  logOut() {
+    sessionStorage.removeItem('role');
+    window.location.href = '/Dashboard';
+  }
+
+  approveVacancy(id: any){  
+    this.service.approveVacancy(id).subscribe((data) => {
+      window.location.href = '/Admin/Vacancies';
+    });
+  }
+
+  rejectVacancy(id: any){
+    this.service.rejectVacancy(id).subscribe((data) => {
+      window.location.href = '/Admin/Vacancies';
+    });
+  }
 
 }

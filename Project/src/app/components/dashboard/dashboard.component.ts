@@ -14,12 +14,13 @@ export class DashboardComponent implements OnInit {
   searchName: string = '';
   searchCategory: string = '';
   searchLocation: string = '';
+  status: string = '';
 
   constructor(private service: DataService, private router: Router) { }
 
   ngOnInit(): void {
     this.service.getData().subscribe(res => {
-      this.Data = res;
+      this.Data = res.filter((item: { status: string; }) => item.status === "approved");
     })
 
     const user = JSON.parse(localStorage.getItem('userData') || '{}');
@@ -33,8 +34,8 @@ export class DashboardComponent implements OnInit {
   }
 
   search() {
-    this.service.searchVacancy(this.searchName, this.searchCategory, this.searchLocation).subscribe(res => {
-      this.Data = res;
+    this.service.searchVacancy(this.searchName, this.searchCategory, this.searchLocation, this.status).subscribe(res => {
+      this.Data = res.filter((item: { status: string; }) => item.status === "approved");
     })
   }
 

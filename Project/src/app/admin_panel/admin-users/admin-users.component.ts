@@ -10,6 +10,8 @@ export class AdminUsersComponent implements OnInit {
   users: any;
   userCount: number = 0;
 
+  username: string = '';
+
   constructor(private service: DataService) {}
 
   ngOnInit(): void {
@@ -26,7 +28,9 @@ export class AdminUsersComponent implements OnInit {
   }
 
   searchUser() {
-
+    this.service.searchUser(this.username).subscribe(res => {
+      this.users = res;
+    })
   }
   
   logOut() {

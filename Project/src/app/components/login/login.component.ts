@@ -48,7 +48,11 @@ export class LoginComponent implements OnInit {
 
       },
       error: (error) => {
-        this.text = 'Login failed:' + ' ' + error.error.error;
+        if (error.status === 400) {
+          this.text = 'Invalid email or password';
+        } else {
+          this.text = 'Login failed: ' + (error?.error?.error || 'An unexpected error occurred');
+        }
       }
     })
   }

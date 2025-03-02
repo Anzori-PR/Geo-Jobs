@@ -25,7 +25,7 @@ export class RegisterComponent {
         address: '',
         website: '',
         socialMedia: '',
-        fileName: ''
+        _filename: ''
     }
   };
 
