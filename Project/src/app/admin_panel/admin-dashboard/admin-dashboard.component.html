@@ -91,7 +91,7 @@
                             <li class="py-3 sm:py-4 flex justify-between items-center" *ngFor="let data of users.slice(-5).reverse()">
                                 <div class="flex items-center space-x-4 pb-4">
                                     <div class="flex-shrink-0">
-                                        <img class="w-8 h-8 rounded-full" src="https://placehold.co/100x100"
+                                        <img class="w-8 h-8 rounded-full" src="../../../assets/images/user.webp"
                                             alt="user image">
                                     </div>
                                     <div class="flex-1 min-w-0">
@@ -120,8 +120,8 @@
                     <div class="overflow-y-auto overflow-x-hidden pr-4" style="max-height: 500px;" *ngFor="let vacancy of vacancyData.slice(-5).reverse()">
                         <div class="flex gap-5 justify-between">
                             <div class="flex gap-5">
-                                <div class="logo w-14 flex items-center justify-center">
-                                    <img class="rounded-full" src="../../../assets/images/New-Project-2024-08-20T104229.775.png"
+                                <div class="logo flex items-center justify-center">
+                                    <img class="w-14 h-14 object-cover rounded-full" [src]="getImageUrl(vacancy.logo)"
                                         alt="">
                                 </div>
         

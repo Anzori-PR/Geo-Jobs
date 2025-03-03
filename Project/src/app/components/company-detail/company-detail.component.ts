@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from 'src/app/service/data.service';
+import { environment } from 'src/environments/environment.development';
 
 @Component({
   selector: 'app-company-detail',
@@ -13,6 +14,8 @@ export class CompanyDetailComponent implements OnInit {
   vacancyData: any;
   id: any;
   vacancyNumber: any;
+
+  baseImageUrl = environment.imageBaseUrl; 
 
   constructor(private service : DataService, private router : ActivatedRoute) { }
 
@@ -29,6 +32,10 @@ export class CompanyDetailComponent implements OnInit {
       this.vacancyData = res;
       this.vacancyNumber = this.vacancyData.length;
     })
+  }
+
+  getImageUrl(filename: string | undefined): string {
+    return filename ? `${this.baseImageUrl}${filename}` : 'path/to/default-logo.png'; // Fallback image
   }
   
 

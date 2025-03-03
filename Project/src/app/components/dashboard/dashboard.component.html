@@ -122,8 +122,8 @@
         <div class="flex flex-col gap-3 bg-white border p-6 hover:border-blue-500 hover:shadow min-w-[250px]"
             *ngFor="let data of Data">
             <div class="flex gap-5">
-                <div class="logo w-14 h-14">
-                    <img class="rounded-full" src="../../../assets/images/New-Project-2024-08-20T104229.775.png" alt="">
+                <div class="logo ">
+                    <img [src]="getImageUrl(data.logo)" class="w-20 h-20 object-cover rounded-full" alt="Profile Image" />
                 </div>
     
                 <div class="flex flex-col gap-3">

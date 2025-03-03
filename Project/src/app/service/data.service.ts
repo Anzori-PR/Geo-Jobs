@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-  api: string;
+  private api = environment.apiUrl;
 
-  constructor(private HttpClient: HttpClient) {
-    this.api = 'http://192.168.100.4:3001';
-  }
+  constructor(private HttpClient: HttpClient) {}
+
 
   // Fetch
   getData(): Observable<any> {
@@ -88,21 +88,8 @@ export class DataService {
   }
 
   //Post vacany
-  updateCompany(data: {
-    userId: string,
-    companyInfo: {
-      companyName: string;
-      companyCategory: string;
-      email: string;
-      phone: string;
-      description: string;
-      address: string;
-      website: string;
-      socialMedia: string;
-      _filename: string;
-    };
-  }): Observable<any> {
-    return this.HttpClient.put<any>(`${this.api}/auth/UpdateCompany`, data);
+  updateCompany(data: FormData): Observable<{ companyInfo: string }> {
+    return this.HttpClient.put<{ companyInfo: string }>(`${this.api}/update-company`, data);
   }
 
   addVacancy(vacancy: {
@@ -139,5 +126,6 @@ export class DataService {
   rejectVacancy(vacancyId: string): Observable<any> {
     return this.HttpClient.put<any>(`${this.api}/vacancy/updateReject/${vacancyId}`, {});
   }
+
 }
 

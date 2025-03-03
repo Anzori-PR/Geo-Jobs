@@ -52,7 +52,7 @@
             <li *ngFor="let user of users" class="py-1 sm:py-4 flex justify-between items-center">
                 <div class="flex items-center space-x-4 pb-4">
                     <div class="flex-shrink-0">
-                        <img class="w-10 h-10 rounded-full" [src]="user.image || 'https://placehold.co/100x100'"
+                        <img class="w-10 h-10 object-cover rounded-full" [src]="user.image || '../../../assets/images/user.webp'"
                             alt="User Image">
                     </div>
                     <div class="flex-1 min-w-0">

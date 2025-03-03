@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit {
     companyId: this.user?.id || '',
     category: '',
     name: '',
-    logo: '',
+    logo: this.user?.companyInfo?._filename || '',
     description: '',
     location: '',
     salary: '',

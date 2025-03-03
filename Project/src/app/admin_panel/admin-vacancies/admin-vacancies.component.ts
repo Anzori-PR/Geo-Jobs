@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/service/data.service';
+import { environment } from 'src/environments/environment.development';
 
 @Component({
   selector: 'app-admin-vacancies',
@@ -14,6 +15,8 @@ export class AdminVacanciesComponent implements OnInit {
   searchLocation: string = '';
   status: string = '';
 
+  baseImageUrl = environment.imageBaseUrl;
+
   constructor(private service : DataService) { }
 
   ngOnInit(): void {
@@ -27,10 +30,6 @@ export class AdminVacanciesComponent implements OnInit {
     this.service.deleteVacancy(id).subscribe((data) => {
       window.location.href = '/Admin/Vacancies';
     });
-  }
-
-  searchUser() {
-
   }
 
   searchVacancy() {
@@ -55,6 +54,10 @@ export class AdminVacanciesComponent implements OnInit {
     this.service.rejectVacancy(id).subscribe((data) => {
       window.location.href = '/Admin/Vacancies';
     });
+  }
+
+  getImageUrl(filename: string | undefined): string {
+    return filename ? `${this.baseImageUrl}${filename}` : 'path/to/default-logo.png'; // Fallback image
   }
 
 }
