@@ -10,6 +10,7 @@ import { DataService } from 'src/app/service/data.service';
 export class RegisterComponent {
 
   text!: string;
+  Cpassword!: string;
 
   userData: any = {
     name: '',
@@ -34,21 +35,27 @@ export class RegisterComponent {
   constructor(private service : DataService, private router : Router) {}
 
   onSubmit() {
-    this.service.register(this.userData).subscribe({
-      next: (response) => {
-        this.text = "Registration successful";
+    if (this.userData.password === this.Cpassword) {
+      this.service.register(this.userData).subscribe({
+        next: (response) => {
+          this.text = "Registration successful";
+  
+          localStorage.setItem('authToken', response.token);
+          localStorage.setItem('userData', JSON.stringify(response.user));
+  
+          setTimeout(() => {
+            window.location.reload();
+          }, 200);
+        },
+        error: (error) => {
+          this.text = 'Registration failed:' + ' ' + error.error.error;
+        }
+      })
+    }else {
+      this.text = 'Password does not match';
+    }
 
-        localStorage.setItem('authToken', response.token);
-        localStorage.setItem('userData', JSON.stringify(response.user));
-
-        setTimeout(() => {
-          window.location.reload();
-        }, 200);
-      },
-      error: (error) => {
-        this.text = 'Registration failed:' + ' ' + error.error.error;
-      }
-    })
+    
   }
 
   close() {

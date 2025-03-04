@@ -11,23 +11,25 @@
                 <div class="flex flex-wrap">
                     <!-- Form Section -->
                     <div class="mb-12 w-full lg:w-6/12 lg:px-6">
-                        <form>
+                        <form (ngSubmit)="sendEmail()">
                             <div class="mb-6">
                                 <label for="exampleInput90" class="block text-neutral-500 mb-2">Name</label>
-                                <input type="text" class="w-full rounded border-2 bg-transparent py-2 px-3 leading-6 outline-none focus:border-primary focus:text-primary" id="exampleInput90" />
+                                <input name="text" required type="text" [(ngModel)]="formData.from_name" class="w-full rounded border-2 bg-transparent py-2 px-3 leading-6 outline-none focus:border-primary focus:text-primary" id="exampleInput90" />
                             </div>
                             <div class="mb-6">
                                 <label for="exampleInput91" class="block text-neutral-500 mb-2">Email address</label>
-                                <input type="email" class="w-full rounded border-2 bg-transparent py-2 px-3 leading-6 outline-none focus:border-primary focus:text-primary" id="exampleInput91" />
+                                <input name="text" required type="email" [(ngModel)]="formData.from_email"  class="w-full rounded border-2 bg-transparent py-2 px-3 leading-6 outline-none focus:border-primary focus:text-primary" id="exampleInput91" />
                             </div>
                             <div class="mb-6">
                                 <label for="exampleFormControlTextarea1" class="block text-neutral-500 mb-2">Message</label>
-                                <textarea class="w-full rounded border-2 bg-transparent py-2 px-3 leading-6 outline-none focus:border-primary focus:text-primary" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <textarea name="text" required [(ngModel)]="formData.message"  class="w-full rounded border-2 bg-transparent py-2 px-3 leading-6 outline-none focus:border-primary focus:text-primary" id="exampleFormControlTextarea1" rows="3"></textarea>
                             </div>
-                            <button type="button" class="w-full rounded bg-sky-500 text-white px-6 py-2.5 text-xs font-medium uppercase">
+                            <button type="submit" class="w-full rounded bg-sky-500 text-white px-6 py-2.5 text-xs font-medium uppercase">
                                 Send
                             </button>
                         </form>
+                        <p class="text-teal-700">{{ successMessage }}</p>
+                        <p class="text-red-700">{{ errorMessage }}</p>
                     </div>
                     <!-- Contact Information -->
                     <div class="w-full lg:w-6/12 lg:px-6">

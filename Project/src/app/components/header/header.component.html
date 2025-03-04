@@ -60,36 +60,50 @@
         <!-- Form Grid -->
         <form class="grid grid-cols-1 gap-6 md:grid-cols-2" (submit)="addVacancy()">
 
+            <!-- Vacancy Name -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Vacancy Name</label>
+                <input type="text" placeholder="Enter vacancy name" name="text" [(ngModel)]="vacancy.name"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500" />
+            </div>
+
             <!-- Category -->
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">Category</label>
                 <select name="category" [(ngModel)]="vacancy.category"
                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500">
                     <option value="" disabled selected>Select a category</option>
-                    <option value="IT">IT & Programming</option>
-                    <option value="Finance">Finance & Accounting</option>
-                    <option value="Marketing">Marketing & PR</option>
+                    <option value="Design">Design</option>
+                    <option value="Development">Development</option>
+                    <option value="Marketing">Marketing</option>
                     <option value="Sales">Sales</option>
-                    <option value="Healthcare">Healthcare</option>
-                    <option value="Education">Education & Teaching</option>
-                    <option value="Engineering">Engineering</option>
-                    <option value="Construction">Construction</option>
-                    <option value="Logistics">Logistics & Transportation</option>
-                    <option value="Hospitality">Hospitality & Tourism</option>
-                    <option value="Legal">Legal Services</option>
-                    <option value="Design">Design & Creative</option>
                     <option value="Customer Service">Customer Service</option>
-                    <option value="HR">Human Resources</option>
-                    <option value="Other">Other</option>
-
+                    <option value="Human Resources">Human Resources (HR)</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Accounting">Accounting</option>
+                    <option value="Engineering">Engineering</option>
+                    <option value="Healthcare">Healthcare</option>
+                    <option value="Education">Education</option>
+                    <option value="Legal">Legal</option>
+                    <option value="Administration">Administration</option>
+                    <option value="Project Management">Project Management</option>
+                    <option value="Content Creation">Content Creation</option>
+                    <option value="Data Science">Data Science</option>
+                    <option value="IT Software Development">IT Software Development</option>
+                    <option value="Business Analysis">Business Analysis</option>
+                    <option value="Operations">Operations</option>
+                    <option value="Real Estate">Real Estate</option>
+                    <option value="Supply Chain & Logistics">Supply Chain & Logistics</option>
+                    <option value="Hospitality">Hospitality</option>
+                    <option value="Retail">Retail</option>
+                    <option value="Manufacturing">Manufacturing</option>
+                    <option value="Architecture">Architecture</option>
+                    <option value="Art & Entertainment">Art & Entertainment</option>
+                    <option value="Public Relations">Public Relations (PR)</option>
+                    <option value="Science & Research">Science & Research</option>
+                    <option value="Writing & Editing">Writing & Editing</option>
+                    <option value="Government & Public Services">Government & Public Services</option>
                 </select>
-            </div>
-
-            <!-- Vacancy Name -->
-            <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Vacancy Name</label>
-                <input type="text" placeholder="Enter vacancy name" name="text" [(ngModel)]="vacancy.name"
-                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500" />
             </div>
 
             <!-- Location -->
@@ -99,22 +113,61 @@
                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500">
                     <option value="" disabled selected>Select a location</option>
                     <option value="Tbilisi">Tbilisi</option>
-                    <option value="Batumi">Batumi</option>
                     <option value="Kutaisi">Kutaisi</option>
                     <option value="Rustavi">Rustavi</option>
-                    <option value="Zugdidi">Zugdidi</option>
+                    <option value="Batumi">Batumi</option>
                     <option value="Gori">Gori</option>
+                    <option value="Zugdidi">Zugdidi</option>
                     <option value="Poti">Poti</option>
+                    <option value="Samtredia">Samtredia</option>
+                    <option value="Senaki">Senaki</option>
                     <option value="Telavi">Telavi</option>
+                    <option value="Khashuri">Khashuri</option>
+                    <option value="Akhaltsikhe">Akhaltsikhe</option>
+                    <option value="Ozurgeti">Ozurgeti</option>
+                    <option value="Marneuli">Marneuli</option>
+                    <option value="Bolnisi">Bolnisi</option>
+                    <option value="Chiatura">Chiatura</option>
+                    <option value="Tsqaltubo">Tsqaltubo</option>
+                    <option value="Kobuleti">Kobuleti</option>
+                    <option value="Dusheti">Dusheti</option>
+                    <option value="Sagarejo">Sagarejo</option>
+                    <option value="Gardabani">Gardabani</option>
+                    <option value="Kaspi">Kaspi</option>
+                    <option value="Tskhinvali">Tskhinvali</option>
+                    <option value="Ambrolauri">Ambrolauri</option>
+                    <option value="Lanchkhuti">Lanchkhuti</option>
+                    <option value="Borjomi">Borjomi</option>
+                    <option value="Stepantsminda">Stepantsminda</option>
+                    <option value="Bakuriani">Bakuriani</option>
+                    <option value="Gudauri">Gudauri</option>
+                    <option value="Mestia">Mestia</option>
+                    <option value="Vani">Vani</option>
+                    <option value="Khoni">Khoni</option>
+                    <option value="Dedoplistskaro">Dedoplistskaro</option>
+                    <option value="Lagodekhi">Lagodekhi</option>
+                    <option value="Signagi">Signagi</option>
+                    <option value="Akhalgori">Akhalgori</option>
+                    <option value="Aspindza">Aspindza</option>
+                    <option value="Ninotsminda">Ninotsminda</option>
+                    <option value="Dmanisi">Dmanisi</option>
+                    <option value="Tsalenjikha">Tsalenjikha</option>
+                    <option value="Martvili">Martvili</option>
+                    <option value="Kareli">Kareli</option>
+                    <option value="Abasha">Abasha</option>
+                    <option value="Khulo">Khulo</option>
+                    <option value="Shuakhevi">Shuakhevi</option>
+                    <option value="Keda">Keda</option>
+                    <option value="Jvari">Jvari</option>
+                    <option value="Kvareli">Kvareli</option>
                     <option value="Other">Other</option>
-
                 </select>
             </div>
 
             <!-- Salary -->
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Salary</label>
-                <input type="number" placeholder="Enter salary range" [(ngModel)]="vacancy.salary" name="text"
+                <label class="block text-sm font-medium text-gray-700 mb-1">Salary </label>
+                <input type="number" placeholder="Enter salary range GEL" [(ngModel)]="vacancy.salary" name="text"
                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500" />
             </div>
 
