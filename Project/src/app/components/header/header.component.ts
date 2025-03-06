@@ -50,6 +50,8 @@ export class HeaderComponent implements OnInit {
           this.destination = 'Companies';
         } else if (this.currentUrl === '/Contact') {
           this.destination = 'Contact';
+        }else if (this.currentUrl = '/FAQ') {
+            this.destination = 'FAQ';
         } else if (this.currentUrl = '/Job-detail') {
           this.destination = '';
         } else if (this.currentUrl === '/CompanyInfo') {
