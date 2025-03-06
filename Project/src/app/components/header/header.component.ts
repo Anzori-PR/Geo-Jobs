@@ -61,7 +61,7 @@ export class HeaderComponent implements OnInit {
         }else if (this.currentUrl === '/My-Vacancies') {
           this.destination = 'My Vacancies';
         } else {
-          this.destination = 'FAQ'
+          this.destination = '';
         }
       }
     });
