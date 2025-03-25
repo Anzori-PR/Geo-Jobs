@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/service/data.service';
-import { environment } from 'src/environments/environment.development';
 
 @Component({
   selector: 'app-companies',
@@ -14,8 +13,6 @@ export class CompaniesComponent implements OnInit {
   searchName: string = '';
   searchCategory: string = '';
   searchLocation: string = '';
-
-  baseImageUrl = environment.imageBaseUrl;
 
   constructor(private service: DataService) { }
 
@@ -38,7 +35,4 @@ export class CompaniesComponent implements OnInit {
     });
   }
 
-  getImageUrl(filename: string | undefined): string {
-    return filename ? `${this.baseImageUrl}${filename}` : 'path/to/default-logo.png'; // Fallback image
-  }
 }

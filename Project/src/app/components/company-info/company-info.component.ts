@@ -32,7 +32,7 @@ export class CompanyInfoComponent {
 
   constructor(private service: DataService) {
     if (this.data.companyInfo._filename) {
-      this.logoPreview = `http://localhost:3001/uploads/company-logos/${this.data.companyInfo._filename}`;
+      this.logoPreview = this.data.companyInfo._filename;
     }
   }
 
@@ -47,22 +47,6 @@ export class CompanyInfoComponent {
       reader.readAsDataURL(file);
     }
   }
-
-  // onSubmit() {
-  //   this.service.updateCompany(this.data).subscribe({
-  //     next: (response) => {
-  //       this.userData.companyInfo = response.companyInfo;
-  //       localStorage.setItem('userData', JSON.stringify(this.userData));
-  //       this.text = 'Company information updated successfully!';
-  //       setTimeout(() => {
-  //         this.text = '';
-  //       }, 2000);
-  //     },
-  //     error: (error) => {
-  //       console.error('Update failed:', error.error.error);
-  //     }
-  //   });
-  // }
   
   onSubmit() {
     const formData = new FormData();

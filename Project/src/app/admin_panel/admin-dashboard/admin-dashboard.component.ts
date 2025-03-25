@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/service/data.service';
-import { environment } from 'src/environments/environment.development';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -14,8 +13,6 @@ export class AdminDashboardComponent implements OnInit {
   vacancyData: any[] = [];
   userCount : number = 0;
   users: any[] = [];
-
-  baseImageUrl = environment.imageBaseUrl;
 
   constructor(private service : DataService) { }
 
@@ -39,8 +36,5 @@ export class AdminDashboardComponent implements OnInit {
     sessionStorage.removeItem('role');
     window.location.href = '/';
   }
-  
-  getImageUrl(filename: string | undefined): string {
-    return filename ? `${this.baseImageUrl}${filename}` : 'path/to/default-logo.png'; // Fallback image
-  }
+
 }

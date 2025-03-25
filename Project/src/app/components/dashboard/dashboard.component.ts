@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/service/data.service';
-import { environment } from 'src/environments/environment.development';
 
 @Component({
   selector: 'app-dashboard',
@@ -17,7 +16,6 @@ export class DashboardComponent implements OnInit {
   searchLocation: string = '';
   status: string = '';
 
-  baseImageUrl = environment.imageBaseUrl;
 
   constructor(private service: DataService, private router: Router) { }
 
@@ -42,7 +40,4 @@ export class DashboardComponent implements OnInit {
     })
   }
 
-  getImageUrl(filename: string | undefined): string {
-    return filename ? `${this.baseImageUrl}${filename}` : 'path/to/default-logo.png'; // Fallback image
-  }
 }

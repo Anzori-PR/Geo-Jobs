@@ -4,7 +4,7 @@
         <div class="flex px-6 justify-between items-center">
             <div class="w-full flex flex-col gap-5 items-center min-[380px]:items-center min-[380px]:flex-row">
                 <div class="logo">
-                    <img class=" w-24 h-24 object-cover rounded-full" [src]="getImageUrl(data.companyInfo._filename)" alt="logo">
+                    <img class=" w-24 h-24 object-cover rounded-full" [src]="data.companyInfo._filename" alt="logo">
                 </div>
 
                 <div class="flex flex-col gap-2 items-center min-[380px]:items-start">
@@ -40,7 +40,7 @@
                     style="background-color: #FDFDFD;;">
                     <div class="flex  gap-5">
                         <div class="logo">
-                            <img class="w-14 h-14 rounded-full object-cover" [src]="getImageUrl(vacancy.logo)" alt="logo">
+                            <img class="w-14 h-14 rounded-full object-cover" [src]="vacancy.logo" alt="logo">
                         </div>
 
                         <div class="flex flex-col gap-3">
